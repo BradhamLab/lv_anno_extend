@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 46 of /projectnb2/bradham/workflows/lvar-anno/Snakefile:
+Missing input files for rule filter_overlaps:
+/projectnb/bradham/data/ReferenceSequences/wray-genome/L_var_clean_utr_extended_fixed.gff

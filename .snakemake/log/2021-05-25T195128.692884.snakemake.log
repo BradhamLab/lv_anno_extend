@@ -1,0 +1,16 @@
+Building DAG of jobs...
+Job counts:
+	count	jobs
+	1	all
+	1	combine_annos
+	1	combine_fastas
+	3
+
+[Tue May 25 19:51:28 2021]
+rule combine_fastas:
+    input: /projectnb/bradham/data/ReferenceSequences/wray-genome/Lvar_genome.fasta, /projectnb/bradham/data/ReferenceSequences/lv-mito-genome/l_var_mito_genome.gff
+    output: /projectnb/bradham/data/ReferenceSequences/modified-wray/L_var_w_mito_and_ribo.fa
+    jobid: 1
+
+RuleException in line 65 of /projectnb2/bradham/workflows/lvar_anno/Snakefile:
+'OutputFiles' object has no attribute 'genome'

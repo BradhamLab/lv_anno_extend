@@ -1,0 +1,29 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	combine_fastas
+	2
+
+[Thu May 27 10:15:46 2021]
+rule combine_fastas:
+    input: /projectnb/bradham/data/ReferenceSequences/wray-genome/Lvar_genome.fasta, /projectnb/bradham/data/ReferenceSequences/lv-mito-genome/l_var_mito_genome.fa
+    output: /projectnb/bradham/data/ReferenceSequences/modified-wray/L_var_w_mito_and_ribo.fa
+    jobid: 1
+
+[Thu May 27 10:15:48 2021]
+Finished job 1.
+1 of 2 steps (50%) done
+
+[Thu May 27 10:15:48 2021]
+localrule all:
+    input: /projectnb/bradham/data/ReferenceSequences/modified-wray/L_var_w_mito_and_ribo.fa, /projectnb/bradham/data/ReferenceSequences/modified-wray/L_var_w_mito_and_ribo.gff
+    jobid: 0
+
+[Thu May 27 10:15:48 2021]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: /projectnb2/bradham/workflows/lvar-anno/.snakemake/log/2021-05-27T101546.914709.snakemake.log

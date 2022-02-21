@@ -1,0 +1,5 @@
+Building DAG of jobs...
+ChildIOException:
+File/directory is a child to another output:
+/projectnb/bradham/data/ReferenceSequences/tmp
+/projectnb/bradham/data/ReferenceSequences/tmp/filtered.gff

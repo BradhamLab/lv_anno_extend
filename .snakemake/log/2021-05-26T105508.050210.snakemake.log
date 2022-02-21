@@ -1,0 +1,66 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	combine_annos
+	1	filter_overlaps
+	1	gffs_to_bed
+	1	rRNA_overlap
+	5
+
+[Wed May 26 10:55:08 2021]
+rule gffs_to_bed:
+    input: /projectnb/bradham/data/ReferenceSequences/wray-genome/rRNA.gff, /projectnb/bradham/data/ReferenceSequences/wray-genome/L_var_clean.gff
+    output: /projectnb/bradham/data/ReferenceSequences/tmp/rRNA.bed, /projectnb/bradham/data/ReferenceSequences/tmp/genome.bed
+    jobid: 6
+
+[Wed May 26 10:55:09 2021]
+Finished job 6.
+1 of 5 steps (20%) done
+
+[Wed May 26 10:55:09 2021]
+rule rRNA_overlap:
+    input: /projectnb/bradham/data/ReferenceSequences/tmp/rRNA.bed, /projectnb/bradham/data/ReferenceSequences/tmp/genome.bed
+    output: /projectnb/bradham/data/ReferenceSequences/tmp/overlap.bed
+    jobid: 5
+
+Removing temporary output file /projectnb/bradham/data/ReferenceSequences/tmp/genome.bed.
+Removing temporary output file /projectnb/bradham/data/ReferenceSequences/tmp/rRNA.bed.
+[Wed May 26 10:55:10 2021]
+Finished job 5.
+2 of 5 steps (40%) done
+
+[Wed May 26 10:55:10 2021]
+rule filter_overlaps:
+    input: /projectnb/bradham/data/ReferenceSequences/wray-genome/L_var_clean.gff, /projectnb/bradham/data/ReferenceSequences/tmp/overlap.bed
+    output: /projectnb/bradham/data/ReferenceSequences/tmp/filtered.gff
+    jobid: 3
+
+Removing temporary output file /projectnb/bradham/data/ReferenceSequences/tmp/overlap.bed.
+[Wed May 26 10:56:28 2021]
+Finished job 3.
+3 of 5 steps (60%) done
+
+[Wed May 26 10:56:28 2021]
+rule combine_annos:
+    input: /projectnb/bradham/data/ReferenceSequences/tmp/filtered.gff, /projectnb/bradham/data/ReferenceSequences/modified-wray/rRNA.gff, /projectnb/bradham/data/ReferenceSequences/lv-mito-genome/l_var_mito_genome.gff
+    output: /projectnb/bradham/data/ReferenceSequences/modified-wray/L_var_w_mito_and_ribo.gff
+    jobid: 2
+
+Removing temporary output file /projectnb/bradham/data/ReferenceSequences/tmp/filtered.gff.
+[Wed May 26 10:56:29 2021]
+Finished job 2.
+4 of 5 steps (80%) done
+
+[Wed May 26 10:56:29 2021]
+localrule all:
+    input: /projectnb/bradham/data/ReferenceSequences/modified-wray/L_var_w_mito_and_ribo.fa, /projectnb/bradham/data/ReferenceSequences/modified-wray/L_var_w_mito_and_ribo.gff
+    jobid: 0
+
+[Wed May 26 10:56:29 2021]
+Finished job 0.
+5 of 5 steps (100%) done
+Complete log: /projectnb2/bradham/workflows/lvar_anno/.snakemake/log/2021-05-26T105508.050210.snakemake.log

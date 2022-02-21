@@ -1,0 +1,50 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	combine_annos
+	1	filter_overlaps
+	1	format_rRNA
+	1	gffs_to_bed
+	1	rRNA_overlap
+	6
+
+[Fri May 28 11:47:27 2021]
+rule gffs_to_bed:
+    input: /projectnb/bradham/data/ReferenceSequences/wray-genome/rRNA.gff, /projectnb/bradham/data/ReferenceSequences/wray-genome/agat_sanitized_extended.gff
+    output: /projectnb/bradham/data/ReferenceSequences/tmp/rRNA.bed, /projectnb/bradham/data/ReferenceSequences/tmp/genome.bed
+    jobid: 6
+
+[Fri May 28 11:47:29 2021]
+Finished job 6.
+1 of 6 steps (17%) done
+
+[Fri May 28 11:47:29 2021]
+rule rRNA_overlap:
+    input: /projectnb/bradham/data/ReferenceSequences/tmp/rRNA.bed, /projectnb/bradham/data/ReferenceSequences/tmp/genome.bed
+    output: /projectnb/bradham/data/ReferenceSequences/tmp/overlap.bed
+    jobid: 5
+
+Removing temporary output file /projectnb/bradham/data/ReferenceSequences/tmp/rRNA.bed.
+Removing temporary output file /projectnb/bradham/data/ReferenceSequences/tmp/genome.bed.
+[Fri May 28 11:47:29 2021]
+Finished job 5.
+2 of 6 steps (33%) done
+
+[Fri May 28 11:47:29 2021]
+rule filter_overlaps:
+    input: /projectnb/bradham/data/ReferenceSequences/wray-genome/agat_sanitized_extended.gff, /projectnb/bradham/data/ReferenceSequences/tmp/overlap.bed
+    output: /projectnb/bradham/data/ReferenceSequences/tmp/filtered.gff
+    jobid: 3
+
+[Fri May 28 11:47:30 2021]
+Error in rule filter_overlaps:
+    jobid: 3
+    output: /projectnb/bradham/data/ReferenceSequences/tmp/filtered.gff
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /projectnb2/bradham/workflows/lvar-anno/.snakemake/log/2021-05-28T114727.277723.snakemake.log

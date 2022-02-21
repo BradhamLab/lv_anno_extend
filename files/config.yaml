@@ -1,0 +1,9 @@
+input:
+  rRNA: "/projectnb/bradham/data/ReferenceSequences/wray-genome/rRNA.gff"
+  gff: "/projectnb/bradham/data/ReferenceSequences/wray-genome/agat_sanitized_extended.gff"
+  genome: "/projectnb/bradham/data/ReferenceSequences/wray-genome/Lvar_genome.fasta"
+  mito_gff: "/projectnb/bradham/data/ReferenceSequences/lv-mito-genome/l_var_mito_genome.gff"
+  mito: "/projectnb/bradham/data/ReferenceSequences/lv-mito-genome/l_var_mito_genome.fa"
+output:
+  dir: "/projectnb/bradham/data/ReferenceSequences/modified-wray-extended"
+  scratch: "/projectnb/bradham/data/ReferenceSequences/tmp"

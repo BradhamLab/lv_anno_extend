@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 5 of /projectnb2/bradham/workflows/lvar_anno/Snakefile:
+Missing input files for rule all:
+flag.txt

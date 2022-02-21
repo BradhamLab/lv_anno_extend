@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 61 of /projectnb2/bradham/workflows/lvar_anno/Snakefile:
+Missing input files for rule combine_fastas:
+/projectnb/bradham/data/ReferenceSequences/wray-genome/L_var_genome.fasta

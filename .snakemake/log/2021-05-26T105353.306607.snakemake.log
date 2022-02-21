@@ -1,0 +1,24 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	combine_annos
+	1	filter_overlaps
+	3
+
+[Wed May 26 10:53:53 2021]
+rule filter_overlaps:
+    input: /projectnb/bradham/data/ReferenceSequences/wray-genome/L_var_clean.gff, /projectnb/bradham/data/ReferenceSequences/tmp/overlap.bed
+    output: /projectnb/bradham/data/ReferenceSequences/tmp/filtered.gff
+    jobid: 3
+
+Terminating processes on user request, this might take some time.
+[Wed May 26 10:54:16 2021]
+Error in rule filter_overlaps:
+    jobid: 3
+    output: /projectnb/bradham/data/ReferenceSequences/tmp/filtered.gff
+
+Complete log: /projectnb2/bradham/workflows/lvar_anno/.snakemake/log/2021-05-26T105353.306607.snakemake.log

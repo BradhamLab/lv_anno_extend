@@ -1,0 +1,22 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 4
+Job counts:
+	count	jobs
+	1	all
+	1	combine_annos
+	1	combine_fastas
+	1	filter_overlaps
+	1	format_rRNA
+	1	gffs_to_bed
+	1	rRNA_overlap
+	7
+
+[Fri May 28 10:48:37 2021]
+rule format_rRNA:
+    input: /projectnb/bradham/data/ReferenceSequences/wray-genome/rRNA.gff
+    output: /projectnb/bradham/data/ReferenceSequences/modified-wray-extended/rRNA.gff
+    jobid: 4
+
+WorkflowError in line 11 of /projectnb2/bradham/workflows/lvar-anno/Snakefile:
+'Wildcards' object has no attribute 'project'
